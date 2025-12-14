@@ -1,4 +1,4 @@
-# 🦇 Cinema Scene Scout: The Batman Edition
+# Cinema Scene Scout:
 
 A Retrieval-Augmented Generation (RAG) application that allows you to find specific scenes in "The Batman (2022)" by describing them in natural language. The system searches through movie subtitles using semantic search powered by Google's Gemini models.
 
@@ -15,7 +15,7 @@ A Retrieval-Augmented Generation (RAG) application that allows you to find speci
 - [How It Works](#how-it-works)
 - [Troubleshooting](#troubleshooting)
 
-## ✨ Features
+## Features
 
 - **Natural Language Search**: Describe scenes in plain English (e.g., "the part where he says he is vengeance")
 - **Semantic Search**: Uses Google's embedding models to find relevant scenes based on meaning, not just keywords
@@ -25,7 +25,7 @@ A Retrieval-Augmented Generation (RAG) application that allows you to find speci
 - **Sliding Window Processing**: Groups subtitle chunks with overlapping windows for better context retention
 - **Vector Database**: Uses ChromaDB for efficient similarity search
 
-## 🏗️ Architecture
+## Architecture
 
 The application uses a RAG (Retrieval-Augmented Generation) pipeline:
 
@@ -40,7 +40,7 @@ The application uses a RAG (Retrieval-Augmented Generation) pipeline:
 - **Frontend**: Streamlit
 - **Framework**: LangChain
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 directTest/
@@ -54,13 +54,13 @@ directTest/
 └── db/                    # ChromaDB database (created after ingestion)
 ```
 
-## 🔧 Prerequisites
+## Prerequisites
 
 - Python 3.8 or higher
 - Conda (recommended) or virtual environment
 - Google API Key (get one from [Google AI Studio](https://makersuite.google.com/app/apikey))
 
-## 📦 Installation
+## Installation
 
 ### Step 1: Set Up Environment
 
@@ -98,7 +98,7 @@ GOOGLE_API_KEY=your-google-api-key-here
 
 > **Note**: The `.env` file is automatically ignored by git. Never commit your API key!
 
-## 🚀 Usage
+## Usage
 
 ### Step 1: Ingest Subtitle Data
 
@@ -199,7 +199,7 @@ Once the FastAPI server is running, visit:
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
-## 🔍 How It Works
+## How It Works
 
 1. **Ingestion Process** (`ingest.py`):
    - Loads the `.srt` subtitle file using LangChain's SRTLoader
@@ -219,7 +219,7 @@ Once the FastAPI server is running, visit:
    - Creates overlapping windows to preserve context across boundaries
    - Example: Chunks [1,2,3], [2,3,4], [3,4,5]...
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Database folder 'db' not found"
 - Run `python ingest.py` first to create the database
@@ -252,21 +252,3 @@ You can modify these settings in the code:
 - `k`: Number of retrieved documents (default: 20)
 - `model`: LLM model name (default: "gemini-2.0-flash")
 - `temperature`: LLM temperature (default: 0)
-
-## 🔐 Security Notes
-
-- Never commit your `.env` file or API keys to version control
-- The `.env` file should already be in `.gitignore`
-- Keep your Google API key secure and rotate it if exposed
-
-## 📄 License
-
-This project is for educational purposes. The subtitle file (`TheBatman2022.srt`) is used for demonstration only.
-
-## 🤝 Contributing
-
-Feel free to fork this project and adapt it for other movies or use cases!
-
----
-
-**Made with 🦇 for Batman fans**
